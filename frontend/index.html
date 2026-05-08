@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Parcelas">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Consulta de Parcelas</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="app-header">
+      <h1>Consulta de Parcelas</h1>
+      <p id="status-dados">Dados offline carregados</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="pesquisa" placeholder="Digite a parcela">
+      <button id="botao-consultar" type="button">Consultar</button>
+      <button id="botao-limpar" class="botao-secundario" type="button">Limpar</button>
+    </div>
+
+    <div id="contador" class="contador"></div>
+    <div id="resultado"></div>
+
+  </div>
+
+<script src="../dados.js"></script>
+<script src="../script.js"></script>
+
+</body>
+</html>
