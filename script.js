@@ -94,7 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js').catch((erro) => {
+    const scriptUrl = document.querySelector('script[src$="script.js"]').src;
+    const appUrl = new URL('.', scriptUrl);
+
+    navigator.serviceWorker.register(new URL('sw.js', appUrl)).catch((erro) => {
         console.log('Service worker nao registrado', erro);
     });
 }

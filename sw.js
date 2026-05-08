@@ -1,7 +1,8 @@
-const CACHE_NAME = 'consulta-parcelas-v6';
+const CACHE_NAME = 'consulta-parcelas-v7';
 
 const ARQUIVOS_CACHE = [
-    './frontend/index.html',
+    './',
+    './index.html',
     './style.css',
     './script.js',
     './dados.js',
