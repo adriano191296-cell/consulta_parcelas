@@ -1,3 +1,4 @@
+// Faz a busca nos dados offline carregados em dados.js.
 function consultar() {
 
     const pesquisa = document.getElementById('pesquisa').value.trim();
@@ -19,10 +20,12 @@ function consultar() {
     mostrarResultado(dados);
 }
 
+// Normaliza qualquer campo para texto minusculo antes de comparar.
 function campo(valor) {
     return String(valor || '').toLowerCase();
 }
 
+// Cria os cards de resultado na tela.
 function mostrarResultado(dados) {
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
@@ -53,6 +56,7 @@ function mostrarResultado(dados) {
     });
 }
 
+// Atualiza o texto que informa total de resultados ou status da busca.
 function atualizarContador(total, mensagem = '') {
     const contador = document.getElementById('contador');
 
@@ -69,6 +73,7 @@ function atualizarContador(total, mensagem = '') {
     contador.textContent = `${total} resultados encontrados`;
 }
 
+// Limpa o campo de busca e remove os resultados exibidos.
 function limparPesquisa() {
     const pesquisa = document.getElementById('pesquisa');
     pesquisa.value = '';
@@ -77,8 +82,10 @@ function limparPesquisa() {
     pesquisa.focus();
 }
 
+// Mantem a funcao acessivel no navegador, inclusive se algum HTML antigo chamar consultar().
 window.consultar = consultar;
 
+// Liga os eventos da tela depois que o HTML terminou de carregar.
 document.addEventListener('DOMContentLoaded', () => {
     atualizarContador(window.PARCELAS.length, `${window.PARCELAS.length} parcelas disponiveis offline`);
 
@@ -93,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Registra o service worker, responsavel pelo cache para funcionamento offline.
 if ('serviceWorker' in navigator) {
     const scriptUrl = document.querySelector('script[src$="script.js"]').src;
     const appUrl = new URL('.', scriptUrl);

@@ -9,30 +9,35 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Consulta de Parcelas</title>
 
+  <!-- Arquivos usados pelo app quando ele roda publicado na raiz do GitHub Pages. -->
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/ac.jpeg">
 </head>
 <body>
 
   <div class="container">
 
+    <!-- Cabecalho com o nome do app e uma mensagem de status dos dados offline. -->
     <header class="app-header">
-      <h1>Consulta de Parcelas</h1>
-      <p id="status-dados">Dados offline carregados</p>
+      <h1>Consulta de Parcelas Adriano Costa</h1>
+      <p id="status-dados">Dados carregados</p>
     </header>
 
+    <!-- Campo de busca e botoes principais da consulta. -->
     <div class="search-box">
       <input type="text" id="pesquisa" placeholder="Digite a parcela">
       <button id="botao-consultar" type="button">Consultar</button>
       <button id="botao-limpar" class="botao-secundario" type="button">Limpar</button>
     </div>
 
+    <!-- O JavaScript atualiza estes blocos com o total e os cards encontrados. -->
     <div id="contador" class="contador"></div>
     <div id="resultado"></div>
 
   </div>
 
+<!-- dados.js precisa carregar antes do script.js, pois nele fica a lista PARCELAS. -->
 <script src="dados.js"></script>
 <script src="script.js"></script>
 
