@@ -1,4 +1,4 @@
-const CACHE_NAME = 'consulta-parcelas-v8';
+const CACHE_NAME = 'consulta-parcelas-v9';
 
 const ARQUIVOS_CACHE = [
     './',
@@ -8,8 +8,8 @@ const ARQUIVOS_CACHE = [
     './dados.js',
     './manifest.json',
     './icons/ac.jpeg',
-    './icons/ac.jpeg',
-    './icons/ac.jpeg',
+    './icons/icon-192.png',
+    './icons/icon-512.png',
 ];
 
 self.addEventListener('install', (evento) => {
