@@ -1,4 +1,4 @@
-const CACHE_NAME = 'consulta-parcelas-v11';
+const CACHE_NAME = 'consulta-parcelas-v23';
 
 const ARQUIVOS_CACHE = [
     './',

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Parcelas">
@@ -23,13 +23,29 @@
     <header class="app-header">
       <img class="app-logo" src="/consulta_parcelas/icons/adr.jpeg" alt="Logo do app">
       <h1>Consulta de Parcelas Adriano Costa</h1>
-      <p id="status-dados">Dados carregados</p>
     </header>
 
-    <!-- Campo de busca e botoes principais da consulta. -->
+    <!-- Busca e listagem num so painel; marcar parcelas faz os cards aparecerem embaixo. -->
     <div class="search-box">
-      <input type="text" id="pesquisa" placeholder="Digite a parcela">
-      <button id="botao-consultar" type="button">Consultar</button>
+      <div class="painel-busca-lista" role="search" aria-label="Filtrar e selecionar parcelas">
+        <input
+          type="text"
+          id="pesquisa"
+          class="painel-busca-input"
+          autocomplete="off"
+          aria-label="Filtrar parcela, ano ou linhas"
+          placeholder="Clique aqui para listar parcelas ou filtre depois"
+        >
+        <p id="lista-aviso-busca" class="lista-aviso-busca" hidden>
+          Nenhuma parcela encontrada para esse texto.
+        </p>
+        <div
+          id="lista-checkboxes"
+          class="lista-checkboxes"
+          role="group"
+          aria-label="Selecionar parcelas"
+        ></div>
+      </div>
       <button id="botao-limpar" class="botao-secundario" type="button">Limpar</button>
     </div>
 
