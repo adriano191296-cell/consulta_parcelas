@@ -8,8 +8,8 @@ const ARQUIVOS_CACHE = [
     './dados.js',
     './manifest.json',
     './icons/ac.jpeg',
-    './icons/icon-192.png',
-    './icons/icon-512.png',
+    './icons/ac.jpeg',
+    './icons/ac.jpeg',
 ];
 
 self.addEventListener('install', (evento) => {
