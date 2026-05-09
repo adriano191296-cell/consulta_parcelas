@@ -1,4 +1,4 @@
-const CACHE_NAME = 'consulta-parcelas-v7';
+const CACHE_NAME = 'consulta-parcelas-v8';
 
 const ARQUIVOS_CACHE = [
     './',
@@ -7,6 +7,7 @@ const ARQUIVOS_CACHE = [
     './script.js',
     './dados.js',
     './manifest.json',
+    './icons/ac.jpeg',
     './icons/icon-192.png',
     './icons/icon-512.png',
 ];
@@ -40,6 +41,3 @@ self.addEventListener('fetch', (evento) => {
         )
     );
 });
-
-      const CACHE_NAME = 'consulta-parcelas-v8';
-
