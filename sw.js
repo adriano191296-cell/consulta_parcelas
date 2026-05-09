@@ -40,3 +40,6 @@ self.addEventListener('fetch', (evento) => {
         )
     );
 });
+
+      const CACHE_NAME = 'consulta-parcelas-v8';
+
