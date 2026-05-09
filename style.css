@@ -27,6 +27,15 @@ body {
 
 .app-header {
     margin-bottom: 24px;
+    text-align: center;
+}
+
+.app-logo {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
 }
 
 h1 {
@@ -118,6 +127,11 @@ button:hover {
     h1 {
         font-size: 1.6rem;
         margin-bottom: 20px;
+    }
+
+    .app-logo {
+        width: 82px;
+        height: 82px;
     }
 
     .search-box {

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'consulta-parcelas-v9';
+const CACHE_NAME = 'consulta-parcelas-v11';
 
 const ARQUIVOS_CACHE = [
     './',
@@ -8,6 +8,7 @@ const ARQUIVOS_CACHE = [
     './dados.js',
     './manifest.json',
     './icons/ac.jpeg',
+    './icons/adr.jpeg',
     './icons/icon-192.png',
     './icons/icon-512.png',
 ];
