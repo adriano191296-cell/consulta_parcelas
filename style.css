@@ -640,7 +640,7 @@ body::before {
     /* Imagem de fundo (somente CSS). Mantém a estética sem “engolir” o conteúdo */
     background-image:
         linear-gradient(180deg, rgba(10, 15, 26, 0.92), rgba(10, 15, 26, 0.75)),
-        url("icons/ac.jpeg");
+        url("icons/adr.jpeg");
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
