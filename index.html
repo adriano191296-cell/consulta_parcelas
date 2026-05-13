@@ -21,9 +21,11 @@
 
     <!-- Cabecalho com o nome do app e uma mensagem de status dos dados offline. -->
     <header class="app-header">
+
       <img class="app-logo" src="icons/adr.jpeg" alt="Logo do app">
       <h1>Consulta de Parcelas Adriano Costa</h1>
     </header>
+
 
     <!-- Busca e listagem num so painel; marcar parcelas faz os cards aparecerem embaixo. -->
     <div class="search-box">
@@ -50,8 +52,11 @@
     </div>
 
     <!-- O JavaScript atualiza estes blocos com o total e os cards encontrados. -->
-    <div id="contador" class="contador"></div>
+    <div class="contador-wrap">
+      <div id="contador" class="contador" role="status" aria-live="polite"></div>
+    </div>
     <div id="resultado"></div>
+
 
   </div>
 

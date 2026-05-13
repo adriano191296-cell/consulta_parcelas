@@ -49,6 +49,7 @@
 body {
     min-height: 100vh;
     min-height: 100dvh;
+
     margin: 0;
     /** Telas largas ate janelas estreitas em PC — escala junto ao viewport (sem ficar só no mobile). */
     padding-top: clamp(16px, 3vmin, 32px);
@@ -71,6 +72,7 @@ body {
 
 .container {
     width: 100%;
+
     max-width: 620px;
     min-width: 0;
     position: relative;
@@ -400,17 +402,32 @@ button:focus-visible {
     outline-color: rgba(148, 163, 184, 0.7);
 }
 
+.contador-wrap {
+    margin-bottom: 14px;
+}
+
 .contador {
     color: var(--text-muted);
     font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 14px;
+    font-weight: 600;
     min-height: 22px;
     padding: 10px 14px;
-    border-radius: var(--radius-sm);
-    background: rgba(30, 41, 59, 0.45);
-    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    background:
+        radial-gradient(120% 180% at 0% 0%, rgba(59, 130, 246, 0.22), transparent 50%),
+        rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
+
+.contador:not(:empty)::before {
+    content: "\2728";
+    margin-right: 8px;
+    opacity: 0.9;
+}
+
 
 .contador:empty {
     display: none;
@@ -429,9 +446,12 @@ button:focus-visible {
 
 .card {
     position: relative;
-    background: linear-gradient(155deg, var(--surface-elevated) 0%, rgba(30, 41, 59, 0.55) 100%);
+    background:
+        radial-gradient(1200px 140px at 20% 0%, rgba(59, 130, 246, 0.18), transparent 45%),
+        linear-gradient(155deg, var(--surface-elevated) 0%, rgba(30, 41, 59, 0.55) 100%);
     padding: 20px 22px;
     border-radius: var(--radius-md);
+
     margin-top: 14px;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
@@ -505,6 +525,18 @@ button:focus-visible {
         padding-inline: clamp(12px, 5vw, 20px);
         padding-bottom: max(40px, calc(env(safe-area-inset-bottom, 12px) + 26px));
     }
+
+    /* Ajuste do fundo para caber melhor no celular */
+    body::before {
+        background-size: cover;
+        background-position: 45% center;
+        opacity: 0.26;
+    }
+
+    body::after {
+        opacity: 0.18;
+    }
+
 
     .container {
         padding: clamp(18px, 5vw, 24px)
@@ -594,3 +626,46 @@ button:focus-visible {
         cursor: pointer;
     }
 }
+
+/* ===== Interface criativa (de apoio visual) ===== */
+
+/* Plano de fundo com “partículas” (somente CSS) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    /* Imagem de fundo (somente CSS). Mantém a estética sem “engolir” o conteúdo */
+    background-image:
+        linear-gradient(180deg, rgba(10, 15, 26, 0.92), rgba(10, 15, 26, 0.75)),
+        url("icons/ac.jpeg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    opacity: 0.28;
+
+    filter: saturate(1.05) contrast(1.02);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    /* Partículas leves por cima da imagem */
+    background-image:
+        radial-gradient(rgba(59, 130, 246, 0.25) 1px, transparent 1px),
+        radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    background-size: 42px 42px, 68px 68px;
+    background-position: 0 0, 14px 22px;
+    opacity: 0.22;
+    filter: blur(0.2px);
+}
+
+
+
+
