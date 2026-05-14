@@ -685,31 +685,38 @@ body::after {
     );
 
     /*tela de abertura (splash) */
-    #splash {
+#splash {
   position: fixed;
   inset: 0;
   background: #0f172a;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   z-index: 9999;
 }
 
 #splash img {
-  width: 180px;
-  height: 180px;
+  width: min(220px, 55vw);
+  height: auto;
+
   object-fit: contain;
-  animation: zoomLogo 1.5s ease;
+
+  filter: drop-shadow(0 0 25px rgba(255,255,255,0.15));
+
+  animation: splashAnimation 1.5s ease;
 }
 
-@keyframes zoomLogo {
+@keyframes splashAnimation {
   from {
-    transform: scale(0.7);
     opacity: 0;
+    transform: scale(0.85);
   }
+
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 }
