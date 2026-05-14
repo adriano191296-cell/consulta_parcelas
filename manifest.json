@@ -1,6 +1,6 @@
 {
-  "name": "Consulta Parcelas",
-  "short_name": "Parcelas",
+  "name": "Parcelas SOCOCO S/A",
+  "short_name": "Parcelas SOCOCO",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,13 +9,13 @@
   "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "icons/logo_ofc.jpeg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/logo_ofc.jpeg",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

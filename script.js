@@ -352,4 +352,11 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(new URL('sw.js', appUrl)).catch((erro) => {
         console.log('Service worker nao registrado', erro);
     });
+
+    /*tela de abertura: mostra o logo ate o service worker carregar e controlar a pagina, evitando piscadas. */
+    window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("splash").style.display = "none";
+  }, 2500);
+});
 }
