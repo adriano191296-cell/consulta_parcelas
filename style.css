@@ -684,7 +684,9 @@ body::after {
         rgba(0, 0, 0, 0.92) 100%
     );
 
-    /*tela de abertura (splash) */
+}
+
+/*tela de abertura (splash) */
 #splash {
   position: fixed;
   inset: 0;
@@ -698,32 +700,22 @@ body::after {
 }
 
 #splash img {
-  /* Ajusta a imagem ao splash em qualquer tela (celular/PC) */
-  max-width: min(80vw, 320px);
-  max-height: 40vh;
+  /* Ajusta a imagem do splash para caber TOTAL na tela */
+  max-width: 100vw;
+  max-height: 100vh;
 
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
 
-  filter: drop-shadow(0 0 25px rgba(255,255,255,0.15));
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.15));
 
-  animation: splashAnimation 1.5s ease;
+  /* Evita “estourar”/recalcular tamanho durante animações */
+  animation: none;
 }
 
 
-@keyframes splashAnimation {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-}
 
 
 
