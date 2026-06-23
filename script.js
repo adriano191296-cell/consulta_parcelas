@@ -344,19 +344,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('botao-limpar').addEventListener('click', limparPesquisa);
 });
 
+// A tela de abertura deve sumir mesmo quando o app roda sem service worker.
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const splash = document.getElementById('splash');
+        if (splash) {
+            splash.style.display = 'none';
+        }
+    }, 2500);
+});
+
 // Registra o service worker, responsavel pelo cache para funcionamento offline.
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
     const scriptUrl = document.querySelector('script[src$="script.js"]').src;
     const appUrl = new URL('.', scriptUrl);
 
     navigator.serviceWorker.register(new URL('sw.js', appUrl)).catch((erro) => {
         console.log('Service worker nao registrado', erro);
     });
-
-    /*tela de abertura: mostra o logo ate o service worker carregar e controlar a pagina, evitando piscadas. */
-    window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("splash").style.display = "none";
-  }, 2500);
-});
 }
